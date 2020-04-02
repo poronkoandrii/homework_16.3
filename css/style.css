@@ -159,6 +159,21 @@ ul {
     background-color: #fff;
     margin: 0 30px;
   }
+}
+
+@media screen and (max-width: 767px) and (max-width: 500px) {
+  .white-block .header__nav:after {
+    content: "Не завершено, в процессе...";
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    margin-left: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .white-block .header__nav:before {
     content: "";
     width: 60px;
@@ -194,6 +209,12 @@ ul {
         -ms-flex-align: center;
             align-items: center;
     padding: 0 30px 0 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .white-block .header__navigation {
+    display: none;
   }
 }
 
