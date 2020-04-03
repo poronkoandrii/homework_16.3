@@ -69,6 +69,10 @@ ul {
   list-style: none;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 .mainer {
   max-width: 1200px;
   margin: 0 auto;
@@ -135,6 +139,9 @@ ul {
 @media screen and (max-width: 500px) {
   .white-block .header {
     height: 75px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
 }
 
@@ -158,33 +165,24 @@ ul {
     position: relative;
     background-color: #fff;
     margin: 0 30px;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-transform-origin: left bottom;
+            transform-origin: left bottom;
   }
 }
 
 @media screen and (max-width: 767px) and (max-width: 500px) {
-  .white-block .header__nav:after {
-    content: "Не завершено, в процессе...";
-    display: block;
-    width: 100%;
-    font-size: 16px;
-    margin-left: 60px;
-    height: 60px;
-    line-height: 60px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .white-block .header__nav:before {
-    content: "";
-    width: 60px;
-    height: 60px;
-    background-color: #fff;
-    display: block;
-    position: absolute;
-    left: -30px;
-    border-bottom-left-radius: 50%;
-    border-top-left-radius: 50%;
-    top: 0px;
+  .white-block .header__nav {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    width: 420px;
+    border-radius: 0;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    margin: -60px 0 0 0;
   }
 }
 
@@ -214,7 +212,10 @@ ul {
 
 @media screen and (max-width: 500px) {
   .white-block .header__navigation {
-    display: none;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding: 0 0 0 45px;
   }
 }
 
@@ -231,6 +232,13 @@ ul {
   .white-block .header__navigation-item {
     margin: 0;
     padding: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .white-block .header__navigation-item {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
   }
 }
 
@@ -387,6 +395,7 @@ ul {
   position: absolute;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
@@ -422,6 +431,13 @@ ul {
   bottom: 7px;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
+}
+
+@media screen and (max-width: 500px) {
+  .white-block .header__navigation-toggler-line--active {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
 }
 
 .white-block .header__navigation-toggler-line--active:before {
